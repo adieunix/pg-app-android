@@ -1,0 +1,35 @@
+<div>
+<div class="login-wrapper">
+    <div ng-click="logClose()" class="login-close"><i class="ion-close-round"></i></div>
+    <img src="img/logo-pg.png" class="img-center">    
+</div>
+
+<ion-content class="login" scroll="false">
+    <div class="list">
+        <form name="loginForm" ng-submit="loginForm.$valid && doLogin(task)" novalidate>
+            <label class="item item-input item-stacked-label login-label">
+                <span class="input-label">Email</span>
+                <div ng-messages="loginForm.mail.$error" ng-if="loginForm.$submitted">
+                    <div ng-message="required" class="mess">Please enter your email</div>
+                    <div ng-message="email" class="mess">Please enter valid email</div>
+                </div>
+                <input name="mail" type="email" ng-model="task.email" placeholder="Email address" required>
+            </label>
+            <label class="item item-input item-stacked-label login-label">
+                <span class="input-label">Password</span>
+                <div ng-messages="loginForm.password.$error" ng-if="loginForm.$submitted">
+                    <div ng-message="required" class="mess">Please enter your password</div>
+                </div>
+                <input name="password" type="password"  ng-model="task.passwd" placeholder="Your password" required>
+            </label>
+            <div class="forgot" ng-click="openModal(2)">Forgot Password</div>
+            <button type="submit" class="button button-full button-balanced">
+                LOGIN
+            </button>            
+        </form>        
+        <button class="button button-full button-dark" ng-click="openModal(1)">
+                REGISTER
+            </button>
+    </div>
+</ion-content>
+</div>

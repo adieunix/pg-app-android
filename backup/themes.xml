@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <color name="custom_theme_color">#cea06c</color>
+    <style name="Mine" parent="android:style/Theme.NoTitleBar">
+        <item name="android:windowBackground">@color/custom_theme_color</item>
+    </style>
+</resources>

@@ -1,0 +1,32 @@
+<div>
+<div header></div>
+
+<ion-content class="user" padding="10">
+    <img src="{{imgProf}}" class="img-user" ng-click="toPhoto()">
+    <div class="tap">Tap to change avatar</div>
+    <form name="UserForm" ng-submit="UserForm.$valid && doUpdate(task)" novalidate>
+        <label class="item item-input item-stacked-label login-label">
+            <span class="input-label">First Name</span>
+            <div ng-messages="UserForm.fname.$error" ng-if="UserForm.$submitted">
+                <div ng-message="required" class="mess">Please enter your first name</div>
+            </div>
+            <input name="fname" type="text" ng-model="task.fname" required>
+        </label>
+        <label class="item item-input item-stacked-label login-label">
+            <span class="input-label">Last Name</span>
+            <input name="lname" type="text" ng-model="task.lname" placeholder="Fill your last name">
+        </label>
+        <label class="item item-input item-stacked-label login-label">
+            <span class="input-label">Phone</span>
+            <div ng-messages="UserForm.phone.$error" ng-if="UserForm.$submitted">
+                <div ng-message="required" class="mess">Please enter your phone number</div>
+            </div>
+            <input name="phone" type="text" ng-model="task.phone" required>
+        </label>
+        <br>
+        <button type="submit" class="button button-full button-balanced">
+            UPDATE
+        </button>
+    </form>
+</ion-content>
+</div>

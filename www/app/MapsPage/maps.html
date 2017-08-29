@@ -1,0 +1,19 @@
+<div>
+<div class="bar bar-header bar-calm primary">
+    <button ui-sref="main" class="button button-clear button-positive">
+        <i class="button button-clear icon ion-android-arrow-back"></i>
+    </button>    
+    <div class="backmod" >  
+        {{title}}
+    </div>
+    <button class="button button-clear button-positive btn-second btn-no" ui-sref="main">
+    </button>
+    <button ng-click="goPeta()" id="navi" ng-show="navigate" class="button button-clear button-positive btn-right">
+        <i class="button button-clear icon ion-android-navigate"></i>
+    </button>
+</div>
+
+<!--<ion-content class="map" scroll="false">-->
+    <div id="map_canvas" style="height: 100%; width: 100%"></div>
+<!--</ion-content>-->
+</div>

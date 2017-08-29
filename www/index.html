@@ -1,0 +1,52 @@
+<!--<!DOCTYPE html>-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <!--<meta http-equiv="Content-Security-Policy" content="img-src 'self' * data:;default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src  'self' 'unsafe-inline' *">-->
+        <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src  'self' 'unsafe-inline' *">
+        <link href="lib/ionic/css/ionic.min.css" rel="stylesheet">
+        <link href="css/animate.min.css" rel="stylesheet">
+        <link href="css/ion-gallery.css" rel="stylesheet">
+        <link href="css/ionic-rating.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+
+        <!-- ionic/angularjs js -->
+        <script src="lib/ionic/js/ionic.bundle.min.js"></script>
+
+        <!-- ngCordova -->
+        <script src="lib/ngcordova/ng-cordova.min.js"></script>
+
+        <!-- Plugin -->
+        <script src="lib/plugin/angular-messages.min.js"></script>
+        <script src="lib/plugin/ionic.ion.imagecachefactory.js"></script>        
+        <script src="lib/plugin/ionic-rating.js"></script>         
+        <script src="lib/plugin/angular-google-maps.min.js"></script>        
+        <script src="lib/plugin/lodash.min.js"></script>         
+
+        <script src="cordova.js"></script>
+        <script src="lib/plugin/ionic-native-transitions.min.js"></script>
+    </head>
+    
+    <body ng-app="starter" style="background:#cea06c">
+        <ion-nav-view id="all" class="animated zoomIn"></ion-nav-view>
+        
+        <!-- app's js -->
+        <script src="app/app.js"></script>        
+        <script src="app/Home/main.ctrl.js"></script>
+        <script src="app/MapsPage/maps.ctrl.js"></script>
+        <script src="app/MorePage/more.ctrl.js"></script>
+        <script src="app/DetailsPage/details.ctrl.js"></script>
+        <script src="app/LoginPage/login.ctrl.js"></script>
+        <script src="app/MapsJs/peta.ctrl.js"></script>
+        <script src="app/MerchantList/merchant.ctrl.js"></script>
+        <script src="app/MerchantNearby/merchantnearby.ctrl.js"></script>
+        <script src="app/ListPage/list.ctrl.js"></script>
+        <script src="app/ListDetails/listd.ctrl.js"></script>
+        <script src="app/PromoPage/promo.ctrl.js"></script>
+        <script src="app/UserPage/user.ctrl.js"></script>
+        <script src="app/StaticPage/static.ctrl.js"></script>
+        <script src="lib/plugin/ion-gallery.js"></script> 
+        <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBsszKuAAwTfaC_ePzSKoCIFD_tZqFEY8Q'></script>
+    </body>
+</html>

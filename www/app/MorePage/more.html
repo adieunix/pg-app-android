@@ -1,0 +1,32 @@
+<div>
+<div header></div>
+
+<ion-content class="map" scroll="false">
+    <div class="list">
+        <a class="item item-icon-left" ui-sref="login" ng-show="login">
+            <i class="icon ion-person"></i>
+            Login/Register
+        </a>
+        <a class="item item-icon-left" ui-sref="user" ng-show="user">
+            <i class="icon ion-person"></i>
+            Profile
+        </a>
+        <a class="item item-icon-left" ui-sref="static({type:3})" ng-show="user">
+            <i class="icon ion-android-unlock"></i>
+            Change Password
+        </a>
+        <a class="item item-icon-left" ui-sref="static({type:1})">
+            <i class="icon ion-document-text"></i>
+            Terms & Conditions
+        </a>
+        <a class="item item-icon-left" ui-sref="static({type:2})">
+            <i class="icon ion-information-circled"></i>
+            Contact Us
+        </a>
+        <a class="item item-icon-left" ng-click="logout()" ng-show="user">
+            <i class="icon ion-arrow-return-left"></i>
+            Logout
+        </a>
+    </div>
+</ion-content>
+</div>

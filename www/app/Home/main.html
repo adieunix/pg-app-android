@@ -1,0 +1,134 @@
+<div>
+<div class="bar bar-header bar-calm primary">
+    <button ui-sref="more" class="button button-clear button-positive btn-right">
+        <i class="button button-clear icon ion-navicon-round"></i>
+    </button>
+</div>
+
+<div class="fixed-select hide" id="sel">
+    <div class="row">
+        <div class="col">
+            <div class="btn-nearby2" ng-click="map()"> Nearby Merchant</div>
+        </div>
+        <div class="col">
+            <div class="btn-categories2" ng-click="allcat()"> All Categories</div>
+        </div>
+    </div>
+</div>
+
+<ion-content style="background:#ddd" class="bottom-40" id="main">
+    <div class="top-wrap">
+        <ion-slide-box>
+            <ion-slide ng-repeat="slide in slides track by slide.id" ng-click="link('{{slide.link}}','{{slide.name}}')" style="height:168px">
+                <div class="featured-slide">
+                    <div class="crop">
+                        <img src="http://cdn.perutgendut.com/uploads/banners/{{slide.id}}/{{slide.file}}" class="f-img-main">
+                    </div>
+                </div>
+<!--                <img src="http://cdn.perutgendut.com/uploads/banners/{{slide.id}}/{{slide.file}}" class="img-res"> -->
+                <div class="stitle">{{slide.name}}</div>
+            </ion-slide>
+        </ion-slide-box>
+        <div ng-if="slides.length==0">
+            <img src="img/slide.png" class="img-res" style="margin-top:-167px">
+        </div>
+
+        <div id="select">
+            <div class="btn-nearby" ng-click="map()"><div class="left-icon"><i class="ion-android-pin"></i></div> Nearby Merchant</div>
+            <div class="btn-categories" ng-click="allcat()"><div class="left-icon"><i class="ion-star"></i></div> All Categories</div>
+        </div>
+    </div>
+
+    <div class="icon-main">
+        <div class="circle-main color-articles"><i class="icon ion-android-bookmark"></i></div>
+    </div>
+    <div class="review-wrap">
+        <div class="review-main-title">ARTICLES</div>
+        <div class="list">
+            <a ng-repeat="article in articles" class="item item-avatar" ui-sref="listd({details:article.details,type:2,title:article.title,yid:null})">
+                <img src="http://cdn.perutgendut.com/uploads/posts/{{article.id}}/{{article.horizontal_image}}">
+                <h2>{{article.title}}</h2>
+                <span class="legend-default"><i class="ion-clock"></i>&nbsp; {{article.published_date | date: 'dd MMMM yyyy'}}</span>
+            </a>
+        </div>
+        <div ng-show="loadArticle" class="center" style="margin-top:-10px"><ion-spinner icon="ios-small" class="left-50"></ion-spinner> <span class="load-span">Loading</span></div>
+    </div>
+
+    <div class="icon-main">
+        <div class="circle-main color-review"><i class="icon ion-android-hangout"></i></div>
+    </div>
+    <div class="review-wrap" id="select">
+        <div class="review-main-title">REVIEW</div>
+
+        <div class="list card card-review" style="padding-bottom:10px" ng-show="revShow">
+            <div class="item" style="padding:7px 10px;min-height:56px">
+                <h2>{{review.name}}</h2>
+                <span class="legend-default"><i class="ion-clock"></i>&nbsp; {{review.date | date: 'dd MMMM yyyy'}}</span>
+            </div>
+
+            <div class="item item-body padding-0">
+                <div class="review-square">
+                    <div class="crop">
+                        <img src="http://cdn.perutgendut.com/uploads/reviews/{{review.id}}/{{review.img}}">
+                    </div>
+                </div>
+                <p class="padding-15" ng-bind-html="review.kutipan"></p>
+                <p class="padding-15">
+                    <a ui-sref="listd({details:review.detail,type:1,title:review.name,yid:null})" class="readmore">READ MORE &nbsp;<i class="ion-chevron-right"></i></a>
+                </p>
+            </div>
+        </div>
+        <div ng-show="loadReview" class="center top-10"><ion-spinner icon="ios-small" class="left-50"></ion-spinner> <span class="load-span">Loading</span></div>
+    </div>
+
+    <div class="icon-main">
+        <div class="circle-main color-video"><i class="icon ion-social-youtube"></i></div>
+    </div>
+    <div class="review-wrap">
+        <div class="review-main-title">VIDEO</div>
+        <div class="video-container-main">
+            <iframe ng-src="{{trustSrc(src)}}" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="title-main-video" ui-sref="listd({details:video.detail,type:5,title:video.name,yid:video.yid})">{{video.name}}</div>
+        <div ng-show="loadVideo" class="center top-10"><ion-spinner icon="ios-small" class="left-50"></ion-spinner> <span class="load-span">Loading</span></div>
+    </div>
+
+    <div class="icon-main">
+        <div class="circle-main color-events"><i class="icon ion-android-calendar"></i></div>
+    </div>
+    <div class="review-wrap">
+        <div class="review-main-title">EVENTS</div>
+        <div class="list">
+            <a ng-repeat="event in events" class="item item-thumbnail-left" ui-sref="listd({details:event.details,type:3,title:event.title,yid:null})">
+                <img src="http://cdn.perutgendut.com/uploads/posts/{{event.id}}/{{event.horizontal_image}}">
+                <h3>{{event.title}}</h3>
+                <p ng-bind-html="event.brief_description" class="overtext"></p>
+            </a>
+        </div>
+        <div class="more-events" ui-sref="list({id:3})">MORE EVENTS</div>
+        <div ng-show="loadEvents" class="center"><ion-spinner icon="ios-small" class="left-50"></ion-spinner> <span class="load-span">Loading</span></div>
+    </div>
+
+    <div class="icon-main">
+        <div class="circle-main color-recipes"><i class="icon ion-android-restaurant"></i></div>
+    </div>
+    <div class="review-wrap">
+        <div class="review-main-title">RECIPES</div>
+        <div class="row">
+            <div ng-repeat="recipe in recipes" class="col center" ui-sref="listd({details:recipe.details,type:4,title:recipe.title,yid:null})">
+                <div class="frame-square">
+                    <div class="crop">
+                        <img src="http://cdn.perutgendut.com/uploads/posts/{{recipe.id}}/{{recipe.horizontal_image}}">
+                    </div>
+                </div>
+                <div class="img-title">{{recipe.title}}</div>
+            </div>
+        </div>
+        <div ng-show="loadRecipe" class="center"><ion-spinner icon="ios-small" class="left-50"></ion-spinner> <span class="load-span">Loading</span></div>
+    </div>
+
+
+</ion-content>
+
+<div footer></div>
+</div>

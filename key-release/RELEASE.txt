@@ -1,0 +1,7 @@
+cordova build android --release
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore pg-release.keystore android-armv7-release-unsigned.apk perutgendut
+zipalign -v 4 android-armv7-release-unsigned.apk pg-release-arm.apk
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore pg-release.keystore android-x86-release-unsigned.apk perutgendut
+zipalign -v 4 android-x86-release-unsigned.apk pg-release-x86.apk

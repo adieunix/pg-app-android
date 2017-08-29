@@ -1,0 +1,28 @@
+<div>
+<div header></div>
+
+<ion-content>
+    <div class="featured-square" ui-sref="listd({details:list.detail,type:list.type,title:list.name,yid:list.yid})">
+        <div class="crop">
+            <img src="http://cdn.perutgendut.com/uploads/{{type}}/{{list.id}}/{{list.img}}" class="f-img">
+        </div>
+        <div class="featured-title">
+            <div class="f-title">{{list.name}}</div>
+            <div class="f-date"><i class="ion-clock"></i>&nbsp; {{list.date | date: 'dd MMMM yyyy'}}</div>
+            <div class="f-desc">{{list.kutipan}}</div>
+        </div>
+    </div>
+    <div class="list">
+        <a ng-repeat="his in items" class="item item-thumbnail-left" ui-sref="listd({details:his.detail,type:his.type,title:his.name,yid:his.yid})">
+            <img src="http://cdn.perutgendut.com/uploads/{{type}}/{{his.id}}/{{his.img}}">
+            <h2 ng-bind-html="his.name"></h2>
+            <span class="legend-default"><i class="ion-clock"></i>&nbsp; {{his.date | date: 'dd MMMM yyyy'}}</span>
+            <p class="overtext2">{{his.kutipan}}</p>
+        </a>
+        <div ng-bind-html="nohis" ng-if="items.length==0" style="text-align:center;margin-top:10px"></div>
+    </div>
+    <ion-infinite-scroll ng-hide="spin" ng-if="!noMoreItemsAvailable" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+</ion-content>
+
+<div footer></div>
+</div>

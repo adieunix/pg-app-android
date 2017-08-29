@@ -1,0 +1,14 @@
+<div>
+<div header></div>
+
+<ion-content>
+    <div class="list">
+        <a ng-repeat="promo in promos" class="item item-thumbnail-left" ng-click="toModal(promo.name,promo.details,promo.end_date,promo.image,promo.id)" style="height:108px">
+            <img src="http://cdn.perutgendut.com/uploads/merchant_promos/{{promo.id}}/{{promo.image}}" style="height:80px">
+            <h2>{{promo.name}}</h2>
+            <p ng-bind-html="promo.brief"></p>
+            <p class="exd">Expired date:<br>{{promo.end_date | date: 'dd MMMM yyyy'}}</p>
+        </a>
+    </div>
+</ion-content>
+</div>

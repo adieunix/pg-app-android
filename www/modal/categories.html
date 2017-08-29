@@ -1,0 +1,24 @@
+<ion-modal-view>
+    <div modheader></div>
+    
+    <ion-content padding="10">
+        <div class="row row-custom">
+            <div ng-repeat="cat in cats" class="col col-50" 
+                 ng-click="toListMerchant(cat.name,cat.id)">
+                <div class="list-cat">
+                    <img src="img/{{cat.name}}.png" class="list-img"> 
+                    <div class="list-title">{{cat.name}}</div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="col">
+                <button class="button button-block button-assertive" ng-click="nearby()">
+                    <div class="title">Nearby Merchant</div>
+                </button>
+            </div>
+        </div>
+
+    </ion-content>
+    
+
+</ion-modal-view>

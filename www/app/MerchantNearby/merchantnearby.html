@@ -1,0 +1,34 @@
+<div>
+<div class="bar bar-header bar-calm primary">
+    <button ng-click="allcat()" class="button back-button button-clear button-positive">
+        <i class="button button-clear icon ion-android-arrow-back"></i>
+    </button>
+    <div class="backmod">  
+        {{title}}
+    </div>
+    <button class="button button-clear button-positive btn-second btn-no" ui-sref="main">
+        <i class="button button-clear icon ion-android-home"></i>
+    </button>
+    <button ui-sref="more" class="button button-clear button-positive btn-right">
+        <i class="button button-clear icon ion-android-more-vertical"></i>
+    </button>
+</div>
+
+<ion-content>
+    <div class="list">
+        <a ng-repeat="his in items"
+           class="item item-thumbnail-left" 
+           href="#" 
+           ui-sref="details({id:his.mid,name:his.name,cat:his.cat,desc:his.detail})"
+           >
+            <img ng-src="{{his.photo==null && 'img/img-null.png' || 'http://cdn.perutgendut.com/uploads/merchants/'+his.id+'/'+his.photo}}">
+            <h2 ng-bind-html="his.name"></h2>            
+            <p class="top-2" ng-bind-html="his.detail"></p>  
+            <p class="top-3"><i class="ion-ios-home-outline" style="font-size:15px"></i>&nbsp; <span ng-bind-html="his.addr"></span></p>
+            <i class="ion-android-pin list-pin">&nbsp; {{his.jarak}} km</i>
+        </a>
+        <div ng-bind-html="nohis" ng-if="items.length==0" style="text-align:center;margin-top:10px"></div>
+    </div>
+    <ion-infinite-scroll ng-hide="spin" ng-if="!noMoreItemsAvailable" on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+</ion-content>
+</div>

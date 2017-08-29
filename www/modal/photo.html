@@ -1,0 +1,14 @@
+<ion-modal-view>
+    <div modheader></div>
+    
+    <ion-content padding="10">
+        <img id="image" class="center-block" src="{{imgProf}}" style="padding-top:15px">
+    </ion-content>
+    
+    <div class="photo-camera">
+        <button ng-click="getCamera()" class="btn-mulai button button-positive button-block"><i class="icon ion-android-camera"></i>&nbsp; TAKE A PHOTO</button>
+    </div>
+    <div class="photo-album">
+        <button ng-click="getPhoto()" class="btn-mulai button button-dark button-block"><i class="icon ion-android-image"></i>&nbsp; CHOOSE FROM ALBUMS</button>
+    </div>
+</ion-modal-view>

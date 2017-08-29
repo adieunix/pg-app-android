@@ -1,0 +1,38 @@
+<div>
+<div header></div>
+
+<ion-content padding="10">
+    <p ng-bind-html="content"></p>
+    <div ng-show="change" class="forgot-pass" style="margin-top:-20px">
+        <form name="passForm" ng-submit="passForm.$valid && doChange(task)" novalidate>
+<!--
+            <label class="item item-input item-stacked-label login-label">
+                <span class="input-label">Old Password</span>
+                <input name="password" type="password" ng-model="task.password" readonly>
+            </label>
+-->
+            <label class="item item-input item-stacked-label login-label">
+                <span class="input-label">New Password</span>
+                <div ng-messages="passForm.password.$error" ng-if="passForm.$submitted">
+                    <div ng-message="required" class="mess-reg">Please enter your password</div>
+                </div>
+                <input name="password" type="password" ng-model="task.passwd" placeholder="Password" required>
+            </label>
+            <label class="item item-input item-stacked-label login-label">
+                <span class="input-label">Confirm Password</span>
+                <div ng-messages="passForm.repassword.$error" ng-if="passForm.$submitted">
+                    <div ng-message="required" class="mess-reg">Please confirm your password</div>
+                </div>
+                <div ng-messages="passForm.repassword.$error" ng-if="passForm.repassword.$touched">
+                    <div ng-message="password" class="mess-reg">Password different</div>
+                </div>
+                <input name="repassword" type="password" ng-model="task.repasswd" confirm-pwd="task.passwd" placeholder="Confirm your Password" required>
+            </label>
+            <br>
+            <button type="submit" class="button button-full button-balanced">
+                SUBMIT
+            </button>
+        </form>
+    </div>
+</ion-content>
+</div>

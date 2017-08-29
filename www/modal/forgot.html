@@ -1,0 +1,21 @@
+<ion-modal-view>
+    <div modheader></div>
+    
+    <ion-content padding="10" class="forgot-pass">
+        <div class="forgot-text">Enter your login email below. We will send you an email with a link to reset your password.</div>
+        <form name="resetForm" ng-submit="resetForm.$valid && doReset(task)" novalidate>
+            <label class="item item-input item-stacked-label login-label">
+                <span class="input-label">Email</span>
+                <div ng-messages="resetForm.mail.$error" ng-if="resetForm.$submitted">
+                    <div ng-message="required" class="mess">Please enter your email</div>
+                    <div ng-message="email" class="mess">Please enter valid email</div>
+                </div>
+                <input name="mail" type="email" ng-model="task.email" placeholder="Please enter your email address" required>
+                <br>
+                <button type="submit" class="button button-full button-balanced">
+                    SUBMIT
+                </button>
+            </label>
+        </form>
+    </ion-content>
+</ion-modal-view>

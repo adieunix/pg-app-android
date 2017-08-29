@@ -1,0 +1,10 @@
+<div>
+<div header></div>
+<div class="ltitle">{{judul}}</div>
+<ion-content padding="10">
+    <div class="video-container" ng-show="videos">
+        <iframe ng-src="{{trustSrc(src)}}" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <p ng-bind-html="konten" class="list-details"></p>
+</ion-content>
+</div>

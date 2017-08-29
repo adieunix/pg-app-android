@@ -1,0 +1,9 @@
+<ion-modal-view>
+    <div modheader></div>
+    
+    <ion-content padding="10">
+        <img src="http://cdn.perutgendut.com/uploads/merchant_promos/{{id}}/{{image}}" style="width:100%">
+        <div class="pex">Expired: {{expired | date: 'dd MMMM yyyy'}}</div>
+        <div class="pdesc" ng-bind-html="desc"></div>
+    </ion-content>
+</ion-modal-view>

@@ -1,0 +1,75 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "com.telerik.plugins.nativepagetransitions": {
+            "PACKAGE_NAME": "com.pg.app"
+        },
+        "cordova-plugin-android-permissions": {
+            "PACKAGE_NAME": "com.pg.app"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.pg.app"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.pg.app"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.pg.app"
+        },
+        "cordova-plugin-crosswalk-webview": {
+            "XWALK_VERSION": "23+",
+            "XWALK_LITEVERSION": "xwalk_core_library_canary:17+",
+            "XWALK_COMMANDLINE": "--disable-pull-to-refresh-effect",
+            "XWALK_MODE": "embedded",
+            "XWALK_MULTIPLEAPK": "true",
+            "PACKAGE_NAME": "com.pg.app"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.pg.app"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.pg.app"
+        },
+        "cordova-plugin-google-analytics": {
+            "PACKAGE_NAME": "com.pg.app"
+        },
+        "cordova-plugin-googlemaps": {
+            "API_KEY_FOR_ANDROID": "AIzaSyCiws1KTmTBn6TchffF_m0X3-Df781ocwk",
+            "PACKAGE_NAME": "com.pg.app"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.pg.app"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.pg.app"
+        },
+        "cordova-plugin-sim": {
+            "PACKAGE_NAME": "com.pg.app"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.pg.app"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.pg.app"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.pg.app"
+        },
+        "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "com.pg.app"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "com.pg.app"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.pg.app"
+        }
+    },
+    "dependent_plugins": {}
+}

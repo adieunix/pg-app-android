@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "205088299619",
+    "firebase_url": "https://perutgendut-1240.firebaseio.com",
+    "project_id": "perutgendut-1240",
+    "storage_bucket": "perutgendut-1240.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:205088299619:android:5fe47539770bd557",
+        "android_client_info": {
+          "package_name": "com.pg.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "205088299619-tnkhp46aflj0aemgf5diiuiie0e1eacv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOfbzgLUrqtP_-sYKSK08uDxOddx-T7k0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

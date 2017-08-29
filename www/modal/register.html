@@ -1,0 +1,49 @@
+<ion-modal-view>
+    <div modheader></div>
+    
+    <ion-content>
+        <div class="list">
+            <form name="registerForm" ng-submit="registerForm.$valid && doRegister(task,dt)" novalidate>
+                <div ng-messages="registerForm.fname.$error" ng-if="registerForm.$submitted">
+                    <div ng-message="required" class="mess-reg">Please enter your first name</div>
+                </div>
+                <label class="item item-input">
+                    <input name="fname" ng-model="task.fname" type="text" placeholder="First Name" required>
+                </label>
+                <div ng-messages="registerForm.mail.$error" ng-if="registerForm.$submitted">
+                    <div ng-message="required" class="mess-reg">Please enter your email</div>
+                    <div ng-message="email" class="mess-reg">Please enter valid email</div>
+                </div>
+                <label class="item item-input">
+                    <input name="mail" type="email" ng-model="task.email" placeholder="Email" required>
+                </label>
+                <div ng-messages="registerForm.password.$error" ng-if="registerForm.$submitted">
+                    <div ng-message="required" class="mess-reg">Please enter your password</div>
+                </div>
+                <label class="item item-input">
+                    <input name="password" type="password" ng-model="task.passwd" placeholder="Password" required>
+                </label>
+                <div ng-messages="registerForm.repassword.$error" ng-if="registerForm.$submitted">
+                    <div ng-message="required" class="mess-reg">Please confirm your password</div>
+                </div>
+                <div ng-messages="registerForm.repassword.$error" ng-if="registerForm.repassword.$touched">
+                    <div ng-message="password" class="mess-reg">Password different</div>
+                </div>
+                <label class="item item-input">
+                    <input name="repassword" type="password" ng-model="task.repasswd" confirm-pwd="task.passwd" placeholder="Re-type Password" required>
+                </label>
+                <div ng-messages="registerForm.phone.$error" ng-if="registerForm.$submitted">
+                    <div ng-message="required" class="mess-reg">Please enter your phone number</div>
+                </div>
+                <label class="item item-input">
+                    <input name="phone" ng-model="task.phone" type="number" placeholder="Phone Number" required>
+                </label>
+                <div class="btn-signup">
+                    <button type="submit" class="button button-full button-balanced">
+                        SIGN UP
+                    </button>
+                </div>
+            </form>            
+        </div>
+    </ion-content>
+</ion-modal-view>

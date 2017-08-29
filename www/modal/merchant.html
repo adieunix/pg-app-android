@@ -1,0 +1,12 @@
+<ion-modal-view class="modal-merchant" ng-click="toMerchant()">
+    <div class="modal-left">
+        <img class="img-res" ng-src="{{img==null && 'img/img-null.png' || 'http://cdn.perutgendut.com/uploads/merchants/'+id+'/'+img}}">
+    </div>
+    <div class="modal-right">
+        <div class="modal-title">{{tmerchant}}</div>
+        <div class="modal-desc">{{dmerchant}}</div>
+    </div>
+    <div class="modal-link">
+        <i class="icon ion-ios-arrow-right"></i>
+  	</div>
+</ion-modal-view>

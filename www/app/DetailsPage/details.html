@@ -1,0 +1,120 @@
+<div>
+<div class="bar bar-header primary bar-trans" id="header">
+    <button ng-click="$ionicGoBack()" class="button back-button button-clear button-positive">
+        <i class="button button-clear icon ion-android-arrow-back"></i>
+    </button>
+    <div id="titdetail">  
+        {{name}}
+    </div>
+    <button class="button button-clear button-positive btn-second btn-no" ui-sref="main">
+        <i class="button button-clear icon ion-android-home"></i>
+    </button>
+    <button ui-sref="more" class="button button-clear button-positive btn-right">
+        <i class="button button-clear icon ion-android-more-vertical"></i>
+    </button>
+</div>
+
+<ion-content id="details">
+<!--    <img src="img/detail-{{cat}}.jpg" class="img-res">-->
+    <div style="background:#000 url(img/detail-{{cat}}.jpg) no-repeat center top" class="imgdetails">
+        <div class="wrapper">
+            <div class="dname">{{name}}</div>
+            <div class="dplace">{{place}}</div>
+            <div class="dcat">{{cat}}</div>
+<!--            <div class="ddesc" ng-bind-html="desc"></div>-->
+        </div>
+    </div>
+    <div class="wrap-content">
+        <div class="row text-center icon-details">
+            <div class="col">
+                <div class="circle cphone" ng-click="toPhone()"><i class="icon ion-ios-telephone"></i></div>
+                <div class="ctitle">PHONE</div>
+            </div>
+            <div class="col">
+                <div class="circle cpromo" ng-click="toPromo()">
+                    <div class="totPromo" ng-bind-html="totp" ng-show="totpt"></div>
+                    <i class="icon ion-speakerphone"></i>                
+                </div>
+                <div class="ctitle">PROMO</div>
+            </div>
+            <div class="col">
+                <div class="circle cmap" ng-click="toMaps()"><i class="icon ion-map"></i></div>
+                <div class="ctitle">MAP</div>
+            </div>
+            <div class="col">
+                <div class="circle cstar">{{rates}}</div>
+                <div class="ctitle">RATING</div>
+            </div>
+        </div>
+        
+        <p ng-bind-html="desc" class="ex-details" ng-click="rmore()"></p>        
+    </div>
+    
+    <div ng-show="loadDetailOff" class="load-details">
+        <ion-spinner icon="spiral"></ion-spinner>
+    </div>
+    
+    <div ng-show="loadDetail">
+        <div class="row row-home">
+            <div class="left-hand">
+                <div class="circle-home">
+                    <i class="icon ion-ios-home-outline"></i>                
+                </div>
+            </div>
+            <div class="right-hand">
+                <div ng-bind-html="address"></div>
+            </div>
+        </div>
+
+        <div class="thumbs-gallery">
+            <ion-gallery ion-gallery-items="items"></ion-gallery>
+            <div class="more" ng-click="toGallery()" ng-show="mores">More Photos&nbsp; <i class="ion-ios-arrow-forward"></i></div>
+    <!--        <img src="img/nophoto.png" class="no-img" ng-if="items.length==0">-->
+        </div>
+
+        <div class="no-rating" ng-show="noRating">
+            <img src="{{imgProf}}" class="img-round">
+            <div class="name-details">{{username}}</div>
+            Rate this place  
+            <rating ng-model="user.rate" max="5" readonly="false"></rating>
+        </div>
+
+        <div class="has-rating" ng-show="hasRating">
+            <div class="list-rating">
+                <div class="list card item-rate" style="border:none">
+                    <div class="item item-avatar item-bg">
+                        <img src="{{imgProf}}">
+                        <h3 style="text-transform:capitalize">{{hasname}}</h3>
+                        <rating ng-model="hasvalue" max="5" readonly="true"></rating> 
+                        <div class="rating-date">{{hasdate | date: 'dd/MM/yyyy'}}</div>
+                        <p>{{hasdetail}}</p>
+                        <i class="icon ion-android-create edit" ng-click="edit(hasId,hasvalue,hasdetail)"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-rating">
+            <div class="left-rating">
+                <div class="rating-val">{{rate}}</div>
+                <div ng-class="{'rating-total':ratings.length>0,'no-rating-yet':ratings.length==0}" ng-bind-html="rtotal"></div>
+            </div>
+            <div class="right-rating">
+                <rating ng-model="rating.rate" max="5" readonly="true" ng-show="star"></rating>
+                <div ng-class="{'has-rate':ratings.length>0,'rate-this':ratings.length==0}" ng-show="rateThis" ng-click="klikRate()"><i class="ion-ios-star"></i>&nbsp; Rate this place</div>
+            </div>
+        </div>
+        <div class="list-rating">
+            <div class="list card item-rate">
+                <div ng-repeat="rating in ratings" class="item item-avatar">
+                    <img ng-src="{{rating.avatar==null && 'img/empty.png' || 'data:image/png;base64,'+rating.avatar}}">
+                    <h3 style="text-transform:capitalize">{{rating.name}}</h3>
+                    <rating ng-model="rating.value" max="5" readonly="true"></rating> 
+                    <div class="rating-date">{{rating.date | date: 'dd/MM/yyyy'}}</div>
+                    <p>{{rating.detail}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>
+</div>
